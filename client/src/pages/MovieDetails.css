@@ -1,0 +1,113 @@
+@import url('https://fonts.googleapis.com/css2?family=Ruwudu:wght@400;600;700&display=swap');
+
+.loading-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+  
+.loading-icon {
+    width: 40px;
+    height: 40px;
+    border: 4px solid #3498db;
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+  
+@keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+}
+
+.movie-information {
+    margin-top: 70px;
+    margin-left: 0;
+}
+
+.movie-details {
+    display: grid;
+    grid-template-columns: repeat(2,600px);
+    place-items: center;
+    align-items: center;
+    margin-left: 150px;
+    font-family: 'Ruwudu', serif;
+}
+
+.movie-valuables {
+    margin-top: 0;
+}
+
+.title {
+    margin-bottom: 20px;    
+    margin-top: 70px;
+    text-align: left;
+    color: white;
+}
+
+.movie-time-info {
+    display: flex;
+}
+
+.movie-time-info h5 {
+    margin-right: 25px;
+}
+
+.genre {
+    display: flex;
+}
+
+.genre div {
+    padding: 8px 16px;
+    margin-right: 10px;
+    background-color: #0074D9; /* Background color */
+    color: #fff; /* Text color */
+    border-radius: 25px; /* Rounded corners */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow */
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.genre div:hover {
+    animation: bounceTilt 0.5s ease-in-out; 
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes bounceTilt {
+    0%, 100% {
+      transform: rotate(0deg);
+    }
+    25% {
+      transform: rotate(5deg); /* Tilt to the right */
+    }
+    75% {
+      transform: rotate(-5deg); /* Tilt to the left */
+    }
+}
+
+.plot {
+    margin-top: 10px;
+    color: white;
+    font-size: 20px;
+}
+  
+.staff {
+    margin-top: 10px;
+    font-size: 18px;
+    color: white;
+}
+  
+.staff li {
+    list-style-type: none;
+}
+
+
+.rating {
+    margin-top: 10px;
+    font-size: 35px;
+    color: orange;
+}

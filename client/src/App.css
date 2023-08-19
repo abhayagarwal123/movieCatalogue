@@ -1,0 +1,16 @@
+* {
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    overflow: hidden;
+    height: 100%;
+}
+
+body {
+    height: 100%;
+    overflow: auto;
+    background: rgb(121,81,9);
+    background: linear-gradient(90deg, rgba(121,81,9,1) 0%, rgba(76,67,189,1) 50%, rgba(255,0,127,1) 100%);
+}
