@@ -2,14 +2,18 @@ import express from 'express'
 import jwt from 'jsonwebtoken'
 import bcrypt from 'bcrypt'
 import { UserModel } from '../models/Users.js'
+import dotenv from 'dotenv'
+
+dotenv.config()
 
 const router = express.Router()
 
 router.post("/register", async (req, res) => {
     const { username, password, email } = req.body;
-    if (username === undefined || password === undefined || email === undefined) {
-        res.json({message: "No body was sent"})
+    if (username === '' || password === '' || email === '') {
+        return res.json({message: "Please fill the form."})
     }
+    
     const user = await UserModel.findOne({username});
 
     if (user) {
@@ -23,6 +27,32 @@ router.post("/register", async (req, res) => {
 
     res.json({message: "User was registered successfully!"})
 })
+
+router.post("/login", async (req, res) => {
+
+    if (req.body.username === "" || req.body.password === "") {
+        return res.json({message: "Please fill out the form!"})
+    }
+
+    const { username, password } = req.body
+
+    const user = await UserModel.findOne({username})
+
+    if (!user) {
+        return res.json({message: "User doesnt exist"})
+    }
+
+    const isPasswordValid = await bcrypt.compare(password, user.password)
+
+    if (!isPasswordValid) {
+        return res.json({message: "Username or password incorrect"})
+    }
+
+    const token = jwt.sign({id: user._id}, process.env.JWT_SECRET)
+    res.json({token, userID: user._id})
+})
+
+
 
 
 

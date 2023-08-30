@@ -73,7 +73,7 @@
 }
 
 .genre div:hover {
-    animation: bounceTilt 0.5s ease-in-out; 
+    animation: bounceTilt 0.4s ease-in-out infinite; 
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -110,4 +110,154 @@
     margin-top: 10px;
     font-size: 35px;
     color: orange;
+}
+
+.rating-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: #ffffff;
+    border: none;
+    cursor: pointer;
+    transition: transform 1s ease, background-color 0.3s ease;
+}
+
+.rating-btn:hover {
+    background-color: #0056b3;
+    transform: scale(1.1);
+}
+
+
+.popup {    
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.popup-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+.close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.popup-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.popup-body {
+    padding: 2px 16px;
+}
+
+.popup-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.star-wrapper {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.star-wrapper span {
+    padding: 4px 20px;
+}
+
+.star-wrapper span:hover {
+    color: gold;
+    transform: scale(1.5);
+}
+
+.fa-star {
+
+    transition: color 0.3s, transform 0.7s;
+}
+
+
+.s1:hover ~ span {
+    color: gold;
+}
+.s2:hover ~ span {
+    color: gold;
+}
+.s3:hover ~ span {
+    color: gold;
+}
+.s4:hover ~ span {
+    color: gold;
+}
+.s5:hover ~ span {
+    color: gold;
+}
+
+.s6:hover ~ span {
+    color: gold;
+}
+
+.s7:hover ~ span {
+    color: gold;
+}
+
+.s8:hover ~ span {
+    color: gold;
+}
+
+.s9:hover ~ span {
+    color: gold;
+}
+
+.s10:hover ~ span {
+    color: gold;
+}
+
+@keyframes animatetop {
+    from {top: -300px; opacity: 0}
+    to {top: 0; opacity: 1}
+}
+
+.wraper {
+    position: absolute;
+    bottom: 30px;
+    right: 50px;
+}
+
+.checked,
+.checked ~ span{
+    color: gold;
 }

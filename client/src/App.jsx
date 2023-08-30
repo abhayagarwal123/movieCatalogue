@@ -6,6 +6,7 @@ import Register from './pages/Register'
 import Navbar from './components/Navbar'
 import MovieDetails from './pages/MovieDetails'
 import './App.css'
+import Ratings from './pages/Ratings'
 
 
 export default function App() {
@@ -18,6 +19,7 @@ export default function App() {
           <Route path='/login' element={<Login />} />
           <Route path='/register' element={<Register />} />
           <Route path='/movie/:id' element={<MovieDetails />} />
+          <Route path='/ratings' element={<Ratings />} />
         </Routes>
       </Router>
     </div>
