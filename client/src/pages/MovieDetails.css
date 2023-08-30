@@ -261,3 +261,13 @@
 .checked ~ span{
     color: gold;
 }
+
+.checked {
+    transform: scale(2);
+}
+
+.rating-number {
+    display: flex;
+    justify-content: center;
+    color: #3498db;
+}
