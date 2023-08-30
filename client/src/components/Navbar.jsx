@@ -33,7 +33,7 @@ export default function Navbar() {
             ) : (
               <div>
                   <li className='navbar-li'><a>Welcome {loginUsername}!</a></li>
-                  <li className='navbar-li' style={{float:'right'}}><a href='/' onClick={logout}>Logout</a></li>
+                  <li className='navbar-li'><a href='/' onClick={logout}>Logout</a></li>
                   <li className='navbar-li' style={{float:'right'}}><a href='/ratings'>My Ratings</a></li>
             
               </div>

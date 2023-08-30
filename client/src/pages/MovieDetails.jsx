@@ -9,7 +9,7 @@ export default function MovieDetails() {
     const location = useLocation()
     const { state } = location 
 
-    const [checkedStars, setCheckedStars] = useState([0,0,0,0,0,0,0,0,0,0])   
+    const [checkedStars, setCheckedStars] = useState(["","","","","","","","","","",""])   
     const [cookies, setCookies] = useCookies(["access_token"])
     const [movieInfo, setMovieInfo] = useState({})
     const [loading, setLoading] = useState(false)
@@ -22,6 +22,7 @@ export default function MovieDetails() {
 
     const closePopup = () => {
         setIsPopupOpen(false)
+        setCheckedStars(["","","","","","","","","","",""])
     }
 
 
@@ -106,20 +107,22 @@ export default function MovieDetails() {
                             </div>
                             <div className='popup-body'>
                                 <div className='star-wrapper'>
-                                    <span className={"fa fa-star s1 " + checkedStars[0]}></span>
-                                    <span className={"fa fa-star s2 " + checkedStars[1]}></span>
-                                    <span className={"fa fa-star s3 " + checkedStars[2]}></span>
-                                    <span className={"fa fa-star s4 " + checkedStars[3]}></span>
-                                    <span className={"fa fa-star s5 " + checkedStars[4]}></span>
-                                    <span className={"fa fa-star s6 " + checkedStars[5]}></span>
-                                    <span className={"fa fa-star s7 " + checkedStars[6]}></span>
-                                    <span className={"fa fa-star s8 " + checkedStars[7]}></span>
-                                    <span className={"fa fa-star s9 " + checkedStars[8]}></span>
-                                    <span className={"fa fa-star s10 " + checkedStars[9]}></span>
+                                    <span className={"fa fa-star s1 " + checkedStars[0]} onClick={() => setCheckedStars(["checked","","","","","","","","","","10"])}></span>
+                                    <span className={"fa fa-star s2 " + checkedStars[1]} onClick={() => setCheckedStars(["","checked","","","","","","","","","9"])}></span>
+                                    <span className={"fa fa-star s3 " + checkedStars[2]} onClick={() => setCheckedStars(["","","checked","","","","","","","","8"])}></span>
+                                    <span className={"fa fa-star s4 " + checkedStars[3]} onClick={() => setCheckedStars(["","","","checked","","","","","","","7"])}></span>
+                                    <span className={"fa fa-star s5 " + checkedStars[4]} onClick={() => setCheckedStars(["","","","","checked","","","","","","6"])}></span>
+                                    <span className={"fa fa-star s6 " + checkedStars[5]} onClick={() => setCheckedStars(["","","","","","checked","","","","","5"])}></span>
+                                    <span className={"fa fa-star s7 " + checkedStars[6]} onClick={() => setCheckedStars(["","","","","","","checked","","","","4"])}></span>
+                                    <span className={"fa fa-star s8 " + checkedStars[7]} onClick={() => setCheckedStars(["","","","","","","","checked","","","3"])}></span>
+                                    <span className={"fa fa-star s9 " + checkedStars[8]} onClick={() => setCheckedStars(["","","","","","","","","checked","","2"])}></span>
+                                    <span className={"fa fa-star s10 " + checkedStars[9]} onClick={() => setCheckedStars(["","","","","","","","","","checked","1"])}></span>
                                 </div>
-                            </div>
-                            <div className='popup-footer'>
-                                <h3>popup footer</h3>
+
+                                <div className='rating-number'>
+                                    <h3 className='rating-text'>{checkedStars[10]}</h3>
+                                </div>
+                                <button>Confirm</button>
                             </div>
                         </div>
                         </div>
