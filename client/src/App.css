@@ -12,5 +12,5 @@ body {
     height: 100%;
     overflow: auto;
     background: rgb(121,81,9);
-    background: linear-gradient(90deg, rgba(121,81,9,1) 0%, rgba(76,67,189,1) 50%, rgba(255,0,127,1) 100%);
+    background: linear-gradient(90deg, #DDFFE7 0%, #98D7C2 15%, #167D7F 50%, #29A0B1 75%);
 }

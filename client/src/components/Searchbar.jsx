@@ -21,10 +21,16 @@ export default function Searchbar({movieFunction}) {
         setInput(value)
     }
 
+    const handleKeyPress = (event) => {
+        if (event.key === "Enter"){
+            event.preventDefault()
+        }
+    }
+
   return (
     <form className='searchbar'>
         <label className='label-text'>Search</label>
-        <input className="input" placeholder='Type to search ...' value={input} onChange={(e) => handleChange(e.target.value)} />
+        <input className="input" placeholder='Type to search ...' value={input} onChange={(e) => handleChange(e.target.value)} onKeyDown={handleKeyPress} />
     </form>
   )
 }
