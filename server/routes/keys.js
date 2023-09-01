@@ -5,6 +5,9 @@ dotenv.config()
 
 const router = express.Router()
 
+
+
+//SEND PRIVATE KEY TO FRONTEND
 router.get('/omdb', (req, res) => {
     res.json({key: process.env.OMDB_KEY})
 })

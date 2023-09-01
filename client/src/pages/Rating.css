@@ -1,0 +1,14 @@
+.rating-container {
+    display: flex;
+    margin-top: 15px;
+}
+
+.rating-poster {
+    margin-left: 10px;
+}
+
+.rating-value {
+    margin-left: 20px;
+    margin-top: 40px;
+}
+
