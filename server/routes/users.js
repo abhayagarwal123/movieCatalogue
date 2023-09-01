@@ -111,13 +111,17 @@ router.post("/:userID/addmovie", async (req,res) => {
         //IF MOVIE ALREADY IN DATABASE
         if (currentMovie) {
             //CHECK IF USER ARLEADY RATED THE MOVIE
-            const ratedMovieIndex = user.ratedMovies.findIndex( 
+            const ratedMovie = user.ratedMovies.find( 
                 (ratedMovie) => ratedMovie.movie.equals(currentMovie._id)
             );
 
-            if (ratedMovieIndex !== -1) {
-                // User has already rated the movie
-                return res.status(400).json({ message: 'User has already rated this movie' });
+
+            //IF RATED ALREADY
+            if (ratedMovie) {
+                // UPDATE THE RATING TO THE NEW NUMBER
+                ratedMovie.rating = rating
+                await user.save()
+                return res.json({message: "The rating has been updated"})
             }
 
             user.ratedMovies.push({movie: currentMovie._id, rating})
