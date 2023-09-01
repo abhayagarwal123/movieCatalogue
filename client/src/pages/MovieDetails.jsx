@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from 'react'
 import { useLocation } from 'react-router-dom'
-import { httpGetMovieInfo } from '../hooks/request'
+import { httpGetMovieInfo, httpPostMovieRating } from '../hooks/request'
 import './MovieDetails.css'
 import { useCookies } from 'react-cookie'
+
 
 export default function MovieDetails() {
 
     const location = useLocation()
     const { state } = location 
 
-    const [checkedStars, setCheckedStars] = useState(["","","","","","","","","","",""])   
+    const [checkedStars, setCheckedStars] = useState(["","","","","","","","","","","0"])   
     const [cookies, setCookies] = useCookies(["access_token"])
     const [movieInfo, setMovieInfo] = useState({})
     const [loading, setLoading] = useState(false)
@@ -122,7 +123,15 @@ export default function MovieDetails() {
                                 <div className='rating-number'>
                                     <h3 className='rating-text'>{checkedStars[10]}</h3>
                                 </div>
-                                <button>Confirm</button>
+                                <button className="confirm-btn" onClick={() => {httpPostMovieRating(window.localStorage.getItem('userID'),
+                                    movieInfo.imdbID,
+                                    movieInfo.Title,
+                                    movieInfo.Poster,
+                                    checkedStars[10]
+                                    )
+                                    alert('movie was rated successfully')
+                                    closePopup()
+                                    }}>Confirm</button>
                             </div>
                         </div>
                         </div>

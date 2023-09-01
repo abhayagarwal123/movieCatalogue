@@ -1,3 +1,6 @@
+import axios from 'axios'
+
+
 const httpGetKey = async () => {
     const keyResponse = await fetch('http://localhost:3001/keys/omdb')
     const fetchedKey = await keyResponse.json()
@@ -13,4 +16,26 @@ const httpGetMovieInfo = async (id) => {
     return fetchedInfo
 }
 
-export {httpGetMovieInfo, httpGetKey}
+const httpPostMovieRating = async (userID, imdbID, name, poster, rating) => {
+    const response = await axios.post(`http://localhost:3001/auth/${userID}/addmovie`, {
+        movieID: imdbID,
+        name: name,
+        rating: rating,
+        poster: poster
+    })
+
+    console.log(response.data)
+}
+
+const httpGetMovieRatings = async (userID) => {
+    const response = await fetch(`http://localhost:3001/auth/${userID}/movies`)
+    const fetchedMovies = await response.json()
+
+    return fetchedMovies
+}
+
+
+
+
+
+export {httpGetMovieInfo, httpGetKey, httpPostMovieRating, httpGetMovieRatings}
