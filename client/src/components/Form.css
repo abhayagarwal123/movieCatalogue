@@ -6,11 +6,11 @@
     padding: 20px;
     width: 100%;
     font-family: Arial, sans-serif;
-    background-color: orange;
+    background-color: lightblue;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 70vh;
+    height: 100vh;
   }
 
   .form-label {

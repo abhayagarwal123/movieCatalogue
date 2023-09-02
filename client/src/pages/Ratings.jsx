@@ -40,13 +40,22 @@ export default function Ratings() {
           <div class="loading-icon"></div>
         </div>
       ) : (
-        fetchedMovies.map((movie,index) => 
-          <div className="rating-container" key={index}>
+        <>
+        <div>
+          <h1 className='text-h1'>Personal Ratings</h1>
+        </div>
+        <div className='rating-container'>
+        {fetchedMovies.map((movie,index) => 
+          <div className="rated-movie" key={index}>
             <img className="rating-poster"src={movie.movie.poster} alt="ye"/>
-            <h1 className='rating-value'>{movie.rating}</h1>
+            <h4 className='rating-value'>{"Your rating : " + movie.rating + "/10"}</h4>
           </div>
         )
-      )}
+        }
+        </div>
+        </>
+        )
+      }
       
     </div>
   );
