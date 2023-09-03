@@ -17,7 +17,7 @@ export default function Form({username, setUsername, password, setPassword, emai
                 { label === "Register" ? (
                     <div className='form-group'>
                         <label htmlFor='email'> Email: </label>
-                    <input type='text' id='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
+                    <input type='email' id='email' value={email} onChange={(event) => setEmail(event.target.value)}/>
                 </div>
                 ) : (
                     <>

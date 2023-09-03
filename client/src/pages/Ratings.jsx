@@ -33,6 +33,14 @@ export default function Ratings() {
     return null;
   }
 
+  if (fetchedMovies.length == 0) {
+    return (
+      <div>
+        <h1 className='text-h1'>NO RATED MOVIES</h1>
+      </div>
+    )
+  }
+
   return (
     <div>
       {loading ? (

@@ -16,9 +16,19 @@ export default function MovieDetails() {
     const [loading, setLoading] = useState(false)
     const [genres, setGenres] = useState([])
     const [isPopupOpen, setIsPopupOpen] = useState(false)
+    const [successPopup, setSuccessPopup] = useState(false)
 
     const openPopup = () => {
         setIsPopupOpen(true)
+    }
+
+    const showSuccessPopup = () => {
+        setSuccessPopup(true)
+
+
+        timeoutID = setTimeout(() => {
+            setSuccessPopup(false)
+        }, 3000)
     }
 
     const closePopup = () => {
@@ -129,9 +139,13 @@ export default function MovieDetails() {
                                     movieInfo.Poster,
                                     checkedStars[10]
                                     )
-                                    alert('movie was rated successfully')
-                                    closePopup()
+                                    showSuccessPopup()
                                     }}>Confirm</button>
+                                {successPopup && (
+                                    <div className='success-popup'>
+                                        Movie rated successfully!
+                                    </div>
+                                )}
                             </div>
                         </div>
                         </div>
