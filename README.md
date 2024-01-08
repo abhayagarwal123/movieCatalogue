@@ -1,9 +1,9 @@
-![screenshot1](https://github.com/Nab32/MovieTake/assets/90017423/18eb4963-a248-4a9c-ac05-8a1578dcc293)# MovieTake
+# MovieTake
 
 A simple movie rating website made using the MERN stack (MongoDB, ExpressJS, ReactJS, NodeJS)
 
+![screenshot1](https://github.com/Nab32/MovieTake/assets/90017423/18eb4963-a248-4a9c-ac05-8a1578dcc293)
 
-![Uploading screenshot1.jpg…]()
 
 ## How it works
 
