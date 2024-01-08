@@ -23,3 +23,18 @@ Follow these steps to run the project locally:
 1. Clone the repository:
    ```bash
    git clone https://github.com/your-username/MovieTake.git
+2. Download the required npm modules
+   ```bash
+   cd client
+   npm i
+   cd ../server
+   npm i
+3. Add the .env and the mandatory keys
+4. To run the project, you can run these commands
+   ```bash
+   cd client
+   npm run dev
+   cd ../server
+   npm start
+The project should now be running locally.
+
