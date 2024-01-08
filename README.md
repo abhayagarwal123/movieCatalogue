@@ -40,5 +40,4 @@ Follow these steps to run the project locally:
    npm run dev
    cd ../server
    npm start
-The project should now be running locally.
 
