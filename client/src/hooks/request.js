@@ -1,5 +1,6 @@
 import axios from 'axios'
 
+const API_URL = 'http://localhost:3001'
 
 const httpGetKey = async () => {
     const keyResponse = await fetch('http://localhost:3001/keys/omdb')

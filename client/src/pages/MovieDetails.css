@@ -14,6 +14,7 @@
     align-items: center;
     margin-left: 150px;
     font-family: 'Ruwudu', serif;
+    color: white;
 }
 
 .movie-valuables {
@@ -184,6 +185,7 @@
 }
 
 .star-wrapper {
+    color: black;
     display: flex;
     flex-direction: row-reverse;
     justify-content: center;
