@@ -1,9 +1,9 @@
 import axios from 'axios'
 
-const API_URL = 'http://localhost:3001'
+const API_URL = 'http://3.16.160.62:3001'
 
 const httpGetKey = async () => {
-    const keyResponse = await fetch('http://localhost:3001/keys/omdb')
+    const keyResponse = await fetch(API_URL + '/keys/omdb')
     const fetchedKey = await keyResponse.json()
     return fetchedKey.key
 }
@@ -18,7 +18,7 @@ const httpGetMovieInfo = async (id) => {
 }
 
 const httpPostMovieRating = async (userID, imdbID, name, poster, rating) => {
-    const response = await axios.post(`http://localhost:3001/auth/${userID}/addmovie`, {
+    const response = await axios.post(`${API_URL}/auth/${userID}/addmovie`, {
         movieID: imdbID,
         name: name,
         rating: rating,
@@ -29,7 +29,7 @@ const httpPostMovieRating = async (userID, imdbID, name, poster, rating) => {
 }
 
 const httpGetMovieRatings = async (userID) => {
-    const response = await fetch(`http://localhost:3001/auth/${userID}/movies`)
+    const response = await fetch(`${API_URL}/auth/${userID}/movies`)
     const fetchedMovies = await response.json()
 
     return fetchedMovies

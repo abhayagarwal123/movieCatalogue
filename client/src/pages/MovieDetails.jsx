@@ -26,7 +26,7 @@ export default function MovieDetails() {
         setSuccessPopup(true)
 
 
-        timeoutID = setTimeout(() => {
+        let timeoutID = setTimeout(() => {
             setSuccessPopup(false)
         }, 3000)
     }

@@ -5,6 +5,8 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function Login() {
+  const API_URL = 'http://3.16.160.62:3001'
+
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
 
@@ -15,7 +17,7 @@ export default function Login() {
   const onSubmit = async (event) => {
     event.preventDefault()
     try {
-      const response = await axios.post('http://localhost:3001/auth/login', {
+      const response = await axios.post(API_URL + '/auth/login', {
         username,
         password
       })
