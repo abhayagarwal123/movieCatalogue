@@ -58,8 +58,8 @@ export default function MovieDetails() {
     <div>
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"></link>
         {loading || (!state) ? (
-            <div class="loading-container">
-                <div class="loading-icon"></div>
+            <div className="loading-container">
+                <div className="loading-icon"></div>
             </div>
         ) : (
             <div className='movie-details'>
@@ -74,13 +74,14 @@ export default function MovieDetails() {
                 </div>
 
                 <div className='movie-information'>
-                    <div className='genre'>
-                        {genres?.map((genre) =>
-                            <div>
-                                {genre}
-                            </div>
-                        )}
-                    </div>
+                <div className='genre'>
+  {genres?.map((genre) =>
+    <div key={genre}>
+      {genre}
+    </div>
+  )}
+</div>
+
 
                     <div className='plot'>
                         {movieInfo.Plot}
@@ -95,12 +96,13 @@ export default function MovieDetails() {
                     </div>
 
                     <div className='rating'>
-                        {(movieInfo.Ratings)?.map((rating) => 
-                            <div className='individual-rating'>
-                                {rating.Source}: {rating.Value}
-                            </div>
-                        )}
-                    </div>
+  {(movieInfo.Ratings)?.map((rating) => 
+    <div key={rating.Source} className='individual-rating'>
+      {rating.Source}: {rating.Value}
+    </div>
+  )}
+</div>
+
                     {!cookies.access_token ? (
                         <></>
                     ) : (

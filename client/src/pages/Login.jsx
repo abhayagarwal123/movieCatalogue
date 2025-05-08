@@ -5,7 +5,7 @@ import {useNavigate} from 'react-router-dom'
 import axios from 'axios'
 
 export default function Login() {
-  const API_URL = 'http://3.16.160.62:3001'
+  const API_URL = 'http://localhost:3001'
 
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')

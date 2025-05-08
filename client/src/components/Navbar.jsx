@@ -22,7 +22,7 @@ export default function Navbar() {
         <header>
         <ul className='navbar-ul'>
             <li className='navbar-li'><a href="/">Home</a></li>
-            <li className='navbar-li' style={{float:'right'}}><a href="/takes">Takes</a></li> 
+            
             {!cookies.access_token ? (
               <div>
 

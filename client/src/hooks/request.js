@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const API_URL = 'http://3.16.160.62:3001'
+const API_URL = 'http://localhost:3001'
 
 const httpGetKey = async () => {
     const keyResponse = await fetch(API_URL + '/keys/omdb')
@@ -11,7 +11,7 @@ const httpGetKey = async () => {
 const httpGetMovieInfo = async (id) => {
     const key = await httpGetKey()
 
-    const response = await fetch(`http://www.omdbapi.com/?apikey=${key}&i=${id}`)
+    const response = await fetch(`http://www.omdbapi.com/?apikey=3ccaa6dd&i=${id}`)
     const fetchedInfo = await response.json()
 
     return fetchedInfo
