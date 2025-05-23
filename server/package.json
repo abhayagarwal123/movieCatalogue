@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "watch": "nodemon server.js"
+    "test": "echo \"No tests defined\""
   },
   "keywords": [],
   "author": "",
