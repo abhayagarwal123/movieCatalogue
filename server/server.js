@@ -16,7 +16,7 @@ app.use(cors())
 app.use("/auth", userRouter)
 app.use("/keys", keyRouter)
 
-mongoose.connect("mongodb+srv://abhayagarwal70371:0112553aA@cluster0.gifjked.mongodb.net/movies")
+mongoose.connect("mongodb+srv://abhayagarwal70371:0112553aA@cluster0.gifjked.mongodb.net/movies?retryWrites=true&w=majority")
 
 
 app.listen(PORT, () => {
