@@ -16,9 +16,11 @@ app.use(cors())
 app.use("/auth", userRouter)
 app.use("/keys", keyRouter)
 
-mongoose.connect(process.env.MONGODB_SECRET_URL)
+mongoose.connect("mongodb+srv://abhayagarwal70371:0112553aA@cluster0.gifjked.mongodb.net/movies")
 
 
 app.listen(PORT, () => {
     console.log("Listening on "+ PORT + "...")
 })
+
+//add link to derver.js
