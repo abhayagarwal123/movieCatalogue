@@ -17,7 +17,7 @@ export default function Home() {
     const httpGetMovies = async (searchValue) => {
         const key = await httpGetKey()
 
-        const response = await fetch(`http://www.omdbapi.com/?apikey=3ccaa6dd&s=${searchValue}`)
+        const response = await fetch(`https://www.omdbapi.com/?apikey=3ccaa6dd&s=${searchValue}`)
         const fetchedMovies = await response.json()
         setListOfMovies(fetchedMovies.Search)
         setSearchValue(searchValue)
