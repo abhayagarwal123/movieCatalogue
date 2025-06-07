@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+     "start": "node server.js",
     "watch": "nodemon server.js",
     "test": "echo \"No tests defined\""
   },
