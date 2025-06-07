@@ -11,7 +11,7 @@ const httpGetKey = async () => {
 const httpGetMovieInfo = async (id) => {
     const key = await httpGetKey()
 
-    const response = await fetch(`http://www.omdbapi.com/?apikey=3ccaa6dd&i=${id}`)
+    const response = await fetch(`https://www.omdbapi.com/?apikey=3ccaa6dd&i=${id}`)
     const fetchedInfo = await response.json()
 
     return fetchedInfo
